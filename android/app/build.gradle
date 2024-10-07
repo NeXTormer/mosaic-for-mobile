@@ -24,7 +24,6 @@ if (flutterVersionName == null) {
 
 
 dependencies {
-    implementation 'eu.ows.mosaic:search-service:1.0.0-SNAPSHOT'
 }
 
 
@@ -35,8 +34,8 @@ android {
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
