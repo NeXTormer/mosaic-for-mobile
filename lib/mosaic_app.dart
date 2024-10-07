@@ -49,7 +49,13 @@ class _MosaicAppState extends State<MosaicApp> {
                 });
               }),
               const SizedBox(height: 16),
-              Expanded(child: SearchResultsList(results))
+              if(!loading)
+              Expanded(child: SearchResultsList(results)),
+              if(loading)
+                Padding(
+                  padding: const EdgeInsets.only(top: 48),
+                  child: Center(child: CircularProgressIndicator()),
+                ),
             ],
           ),
         ));

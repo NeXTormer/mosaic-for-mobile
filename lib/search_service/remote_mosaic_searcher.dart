@@ -20,6 +20,7 @@ class RemoteMosaicSearcher {
         for (final entry in entries) {
           results.add(SearchResult.named(
             title: entry['title'],
+            url: entry['url'],
             snippet: entry['textSnippet'],
             wordCount: entry['wordCount'],
             language: entry['language'],

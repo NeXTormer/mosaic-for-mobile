@@ -10,6 +10,7 @@ class SearchResultsList extends StatelessWidget {
           SearchResult(
               'Wikipedia: The Carsey-Werner Company',
               'The Carsey-Werner Company (also called Carsey-Werner Productions or Carsey-Werner Television) is an independent television company. It was founded in 1981 by former ABC writer and producer duo Marcy Carsey and Tom Werner.',
+              '',
               [
                 (Icons.language, 'eng'),
                 (Icons.storage, 'demo-simplewiki'),
