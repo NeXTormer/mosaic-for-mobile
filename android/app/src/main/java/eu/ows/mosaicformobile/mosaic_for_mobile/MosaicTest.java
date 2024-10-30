@@ -125,12 +125,20 @@ public class MosaicTest {
                         // It's a file, so copy it to the local storage
                         InputStream in = assetManager.open(assetPath);
                         File outFile = new File(outDir, filename);
-                        print("Copying " + filename + " to " + outFile.getAbsolutePath() + "...");
 
-                        OutputStream out = new FileOutputStream(outFile);
-                        copyFile(in, out);
+                        if(!outFile.exists())
+                        {
+                            print("Copying " + filename + " to " + outFile.getAbsolutePath() + "...");
+
+                            OutputStream out = new FileOutputStream(outFile);
+                            copyFile(in, out);
+                            out.close();
+                        }
+                        else
+                        {
+                            print(outFile.getAbsolutePath() + " already exists");
+                        }
                         in.close();
-                        out.close();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -147,6 +155,20 @@ public class MosaicTest {
         }
     }
 
+
+    public static void deleteAllFiles(Context context) {
+        File dir = context.getFilesDir();
+        deleteRecursive(dir);
+    }
+
+    private static void deleteRecursive(File fileOrDirectory) {
+        if (fileOrDirectory.isDirectory()) {
+            for (File child : fileOrDirectory.listFiles()) {
+                deleteRecursive(child);
+            }
+        }
+        fileOrDirectory.delete();
+    }
 
     public static void logAndroidRuntimeVersion() {
         // The Android version

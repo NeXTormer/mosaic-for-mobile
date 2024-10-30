@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
-
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class SearchResultWidget extends StatelessWidget {
-  const SearchResultWidget(this.data, {super.key});
+  SearchResultWidget(this.data, {super.key}) {}
 
   final SearchResult data;
 
@@ -16,15 +14,16 @@ class SearchResultWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 16),
       child: SizedBox(
           height: 220,
-          child: InkWell(
-            onTap: () {
-
-
-              // final Uri url = Uri.parse(data.url);
-              // launchUrl(url);
-            },
-            child: Card(
-              margin: EdgeInsets.zero,
+          child: Card(
+            margin: EdgeInsets.zero,
+            child: InkWell(
+              customBorder: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              onTap: () {
+                launchUrl(Uri.parse(data.url));
+                return;
+              },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -32,7 +31,8 @@ class SearchResultWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       data.title,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
                   ),
                   Divider(
@@ -89,7 +89,7 @@ class SearchResult {
   SearchResult.named(
       {required this.title,
       required this.snippet,
-        required this.url,
+      required this.url,
       String? indexName,
       String? language,
       int? wordCount})

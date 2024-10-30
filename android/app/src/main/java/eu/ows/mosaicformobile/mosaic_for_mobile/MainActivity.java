@@ -18,17 +18,30 @@ public class MainActivity extends FlutterActivity {
     {
         super.configureFlutterEngine(flutterEngine);
 
-        MosaicTest.startMosaic(this);
         new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
                 .setMethodCallHandler(
                         (call, result) -> {
-                            MosaicTest.print("invoked method channel");
-                            try {
-                                String query_result = MosaicTest.performSearch(call.method);
-                                result.success(query_result);
-                            } catch (SQLException | IOException | ParseException e) {
-                                result.error("Error", e.toString(), null);
+                            MosaicTest.print("Received method channel request: " + call.method);
+                            if(call.method.equalsIgnoreCase("search"))
+                            {
+                                try {
+                                    String query_result = MosaicTest.performSearch(call.argument("query"));
+                                    result.success(query_result);
+                                } catch (SQLException | IOException | ParseException e) {
+                                    result.error("Error", e.toString(), null);
+                                }
                             }
+                            else if(call.method.equalsIgnoreCase("start")) {
+                                MosaicTest.startMosaic(this);
+                                result.success("started mosaic service");
+                            }
+                            else if(call.method.equalsIgnoreCase("reset")) {
+                                MosaicTest.deleteAllFiles(this);
+                                MosaicTest.startMosaic(this);
+                                result.success("reset mosaic service");
+                            }
+
+
                         }
                 );
     }
