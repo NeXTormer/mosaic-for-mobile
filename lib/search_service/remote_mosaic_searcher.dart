@@ -9,10 +9,10 @@ class RemoteMosaicSearcher {
     final response =
         await dio.get('https://qnode.eu/ows/mosaic/service/search?q=' + query);
 
-    return decodeJsonResponse(response.data);
+    return _decodeJsonResponse(response.data);
   }
 
-  static List<SearchResult> decodeJsonResponse(response) {
+  static List<SearchResult> _decodeJsonResponse(response) {
     List<SearchResult> results = [];
 
     for (final indexResults in response['results']) {

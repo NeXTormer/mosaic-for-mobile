@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mosaic_for_mobile/search_service/local_mosaic_searcher.dart';
 import 'package:mosaic_for_mobile/search_service/remote_mosaic_searcher.dart';
 import 'package:mosaic_for_mobile/widgets/mosaic_search_bar.dart';
 import 'package:mosaic_for_mobile/widgets/search_result_widget.dart';
@@ -20,7 +21,7 @@ class _MosaicAppState extends State<MosaicApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Mosaic4Mobile'), actions: [
+        appBar: AppBar(title: Text('Mosaic4Mobile (local)'), actions: [
           IconButton(
               onPressed: () {},
               icon: Row(

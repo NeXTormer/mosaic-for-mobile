@@ -1,0 +1,14 @@
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/io/osirrc/ciff/CommonIndexFileFormat.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffContentPostingsEnum.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffContentTerms.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffContentTermsEnum.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffDocValues.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffDocValuesProducer.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffFields.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffIdPostingsEnum.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffIdTerms.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffIdTermsEnum.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffImporter.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffNorms.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffNormsProducer.java
+/Users/felix/Developer/OWS/lucene-ciff/src/main/java/nl/ru/ciffimporter/CiffReader.java

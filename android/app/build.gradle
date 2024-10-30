@@ -43,7 +43,7 @@ android {
         applicationId "eu.ows.mosaicformobile.mosaic_for_mobile"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 26
+        minSdkVersion 34
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -62,4 +62,14 @@ android {
 
 flutter {
     source '../..'
+}
+
+dependencies {
+    implementation files('/Users/felix/Developer/OWS/duckdb-java/build/release/duckdb_jdbc.jar')
+
+    implementation ('eu.ows.mosaic:core:1.0-SNAPSHOT')
+    implementation ('eu.ows.mosaic:analyzer:1.0-SNAPSHOT')
+    implementation ('eu.ows.mosaic:query:1.0-SNAPSHOT')
+    implementation ('eu.ows.mosaic:geo:1.0-SNAPSHOT')
+    implementation ('eu.ows.mosaic:keywords:1.0-SNAPSHOT')
 }
