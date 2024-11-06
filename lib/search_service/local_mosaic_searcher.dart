@@ -19,6 +19,19 @@ class LocalMosaicSearcher {
     return _decodeJsonResponse(response);
   }
 
+  static Future<List<dynamic>> indexInfo() async {
+    String response = "failed to get response";
+    try {
+      final result = await platform.invokeMethod<String>('index-info');
+      response = "$result";
+    } on PlatformException catch (e) {
+      response = "'${e.message}'.";
+      return [];
+    }
+
+    return jsonDecode(response)['results'];
+  }
+
   static List<SearchResult> _decodeJsonResponse(response) {
     List<SearchResult> results = [];
     final jsonObject = jsonDecode(response);

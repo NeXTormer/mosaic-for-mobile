@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mosaic_for_mobile/search_service/local_mosaic_searcher.dart';
 import 'package:mosaic_for_mobile/search_service/remote_mosaic_searcher.dart';
+import 'package:mosaic_for_mobile/widgets/index_info_widget.dart';
 import 'package:mosaic_for_mobile/widgets/mosaic_search_bar.dart';
 import 'package:mosaic_for_mobile/widgets/search_result_widget.dart';
 import 'package:mosaic_for_mobile/widgets/search_results_list.dart';
@@ -105,6 +106,7 @@ class _MosaicAppState extends State<MosaicApp> {
                   padding: const EdgeInsets.only(top: 48),
                   child: Center(child: CircularProgressIndicator()),
                 ),
+              if (results.isEmpty) IndexInfoWidget(),
             ],
           ),
         ));

@@ -10,19 +10,18 @@ class SearchResultsList extends StatelessWidget {
           SearchResult(
               'Wikipedia: The Carsey-Werner Company',
               'The Carsey-Werner Company (also called Carsey-Werner Productions or Carsey-Werner Television) is an independent television company. It was founded in 1981 by former ABC writer and producer duo Marcy Carsey and Tom Werner.',
-              '',
-              [
-                (Icons.language, 'eng'),
-                (Icons.storage, 'demo-simplewiki'),
-                (Icons.numbers, '69')
-              ])
+              '', [
+            (Icons.language, 'eng'),
+            (Icons.storage, 'demo-simplewiki'),
+            (Icons.numbers, '69')
+          ])
         ];
 
   final List<SearchResult> results;
 
   @override
   Widget build(BuildContext context) {
-    return results.length == 0
+    return results.isEmpty
         ? Center(
             child: Text(
             'enter a search query to get results',
